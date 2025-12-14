@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-box">
+            <div class="dashboard-header">
+                <h1>Welcome, <%= username %>!</h1>
+                <p>You have successfully logged in</p>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="info-card">
+                    <h3>Azure Configuration</h3>
+                    <p><strong>Managed Identity:</strong> <%= azureEnabled ? 'Enabled ✓' : 'Not Configured' %></p>
+                    <p><strong>Environment:</strong> <%= process.env.NODE_ENV || 'development' %></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Application Info</h3>
+                    <p><strong>Node.js Version:</strong> <%= process.version %></p>
+                    <p><strong>Platform:</strong> <%= process.platform %></p>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <a href="/" class="btn btn-secondary">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

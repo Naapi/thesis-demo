@@ -1,0 +1,10 @@
+{
+  "http": {
+    "routePrefix": ""
+  },
+  "extensions": {
+    "http": {
+      "routePrefix": ""
+    }
+  }
+}
