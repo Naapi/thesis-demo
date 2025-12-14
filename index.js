@@ -49,19 +49,26 @@ app.post('/login', async (req, res) => {
     });
   }
   
-  // Simple demo authentication (in production, use proper authentication)
-  if (username && password) {
-    // Successful login - redirect to dashboard
-    res.redirect('/dashboard');
-  } else {
-    res.render('login', {
-      title: 'Login - Thesis Demo',
-      message: 'Invalid credentials'
-    });
-  }
+  // DEMO ONLY: This is a basic demo authentication
+  // TODO: In production, implement proper authentication:
+  // - Use Azure AD B2C or Azure Active Directory
+  // - Implement OAuth 2.0 / OpenID Connect
+  // - Add session management with secure cookies
+  // - Use bcrypt/argon2 for password hashing
+  // - Add rate limiting to prevent brute force attacks
+  
+  // For demo purposes, accept any non-empty credentials
+  // Successful login - redirect to dashboard
+  res.redirect('/dashboard');
 });
 
 app.get('/dashboard', (req, res) => {
+  // DEMO ONLY: No authentication check implemented
+  // TODO: In production, add authentication middleware:
+  // - Verify session token/cookie
+  // - Check JWT token validity
+  // - Redirect to login if not authenticated
+  
   res.render('dashboard', {
     title: 'Dashboard - Thesis Demo',
     username: 'User',
